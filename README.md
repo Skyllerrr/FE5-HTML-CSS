@@ -697,3 +697,653 @@ bold : 굵게
 lighter : 현재 요소의 굵기를 부모 요소 굵기 보다 한 단계 가볍게
 <br>
 border : 현재 요소의 굵기를 부모 요소 굵기 보다 한 단계 두껍게
+
+<br>
+</br>
+
+## text-transform
+---
+<br>
+
+uppercase : 모든 텍스트를 대문자로
+<br>
+lowercase : 모든 텍스트를 소문자로
+<br>
+capitalize : 모든 단어의 첫글자를 대문자로
+
+```css
+p::first-letter{
+	text-transform: uppercase;	
+}
+```
+
+<br>
+</br>
+
+## text-decoration (단축 속성)
+---
+<br>
+
+color, line, style, thickness 순서
+
+<br>
+
+underline : 밑줄
+<br>
+overline : 윗줄
+<br>
+line-through : 취소선
+<br>
+
+style : solid, wavy, dashed
+
+```css
+.dashed {
+  text-decoration: lime underline overline dashed auto;
+}
+
+.wavy{
+	text-decoration-color: royalblue;
+  text-decoration-line: line-through underline overline;
+  text-decoration-style: wavy;
+	text-decoration-thickness:5px;
+}
+```
+
+<br>
+</br>
+
+## text-shadow
+---
+<br>
+
+텍스트에 그림자를 추가한다.
+<br>
+
+offset-x, offset-y, blur-radius, color
+<br>
+```css
+text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+```
+
+<br>
+</br>
+
+## text-align
+---
+<br>
+
+left : 왼쪽 정렬
+<br>
+right : 오른쪽 정렬
+<br>
+center : 중앙 정렬
+<br>
+justify : 양쪽 정렬
+
+<br>
+</br>
+
+## vertical-align
+---
+<br>
+
+텍스트의 세로 정렬을 설정한다.
+<br>
+
+**<u>인라인, 인라인 블록 및 테이블 셀 요소에만 적용된다</u>**
+<br>
+
+**<u>블록 레벨에서 수직 정렬을 하고 싶으면 flex를 사용하자!</u>**
+```css
+.block { 
+	display:flex;
+  	align-items: center;
+}
+```
+
+<br>
+</br>
+
+## line-height
+---
+<br>
+
+행간을 설정하며, 단위나 배수 및 % 등의 값으로 설정한다.
+
+<br>
+</br>
+
+## letter-spacing
+---
+<br>
+
+자간을 설정한다.
+
+<br>
+</br>
+
+## word-spacing
+---
+<br>
+
+단어와 단어 사이의 간격을 설정한다.
+
+<br>
+</br>
+
+## word-break
+---
+<br>
+
+텍스트가 자신의 콘텐츠 박스 밖으로 넘칠 경우 <br> 줄바꿈 여부를 지정한다.
+
+<br>
+
+normal : 기본 줄 바꿈 규칙을 사용한다.
+<br>
+break-all : 글 넘침을 방지하기 위해서 어떠한 두 문자 사이에서도 줄바꿈이 발생할 수 있다.
+
+<br>
+</br>
+
+## font (단축 속성)
+---
+<br>
+
+font : font-style, font-variant, font-weight, <br> font-stretch, font-size / line-height, font-family
+
+```css
+p {
+	font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
+}
+```
+
+<br></br>
+
+# CSS 선택자 <br> (가상 클래스 / 가상 요소)
+## 가상 클래스 선택자
+---
+<br>
+
+<br>
+</br>
+
+## :first-child
+---
+<br>
+형제 요소 그룹 중 첫 번째 요소
+
+<br>
+</br>
+
+## :last-child
+---
+<br>
+형제 요소 그룹 중 마지막 요소
+
+<br>
+</br>
+
+## :nth-child
+---
+<br>
+형제 사이에서의 순서에 따라 요소를 선택한다.
+
+<br>
+
+```css
+/* 2번째 li */
+li:nth-child(2) {
+  color: lime;
+}
+/* 홀수번째 li */
+li:nth-child(odd) {
+  color: lime;
+}
+
+/* 짝수번째 li */
+li:nth-child(even) {
+  color: lime;
+}
+/* 2n+1번째 li */
+li:nth-child(2n+1) {
+  color: lime;
+}
+```
+
+<br>
+</br>
+
+## :nth-of-type
+---
+<br>
+형제 그룹 안에서 위치를 기반으로 형제 요소 선택
+
+<br>
+</br>
+
+## :only-of-type
+---
+<br>
+동일한 유형의 형제가 없는 형제 요소 중 유일하게 사용된 태그
+
+<br>
+</br>
+
+## :not
+---
+<br>
+부정 선택자이다.
+
+<br>
+
+```css
+/* li 중 첫번째가 아닌 li */
+li:not(:first-child){
+	margin-top:20px;
+}
+```
+
+<br>
+</br>
+
+## 가상 요소 (::)
+---
+<br>
+선택자에 추가하는 키워드이다.
+<br>
+특정 요소의 일부분에만 스타일을 입힐 수 있다.
+
+<br>
+</br>
+
+## ::after과 ::before
+---
+<br>
+선택한 요소에 자식을 생성한다.
+<br>
+보통 content 속성과 짝을 지어 요소에 장식용 콘텐츠를 추가할 때 사용한다.
+
+<br>
+빈 태그 img, br, input 에는 적용할 수 없다.
+
+<br>
+</br>
+
+## ::placeholder
+---
+<br>
+자리 표시자이며, input과 textarea 요소에 정보를 <br>제공한다.
+
+<br></br>
+
+# CSS 선택자 우선 순위
+## 후자 우선의 원칙
+---
+<br>
+동일한 선택자에 동일한 속성이 사용되었을 경우 뒤에 적힌 속성을 따른다.
+
+<br>
+
+```html
+<p>선택자 우선순위</p>
+```
+```css
+p {color: red; font-size:20px;}
+p {color: blue;}
+```
+color 속성이 동일하기 때문에, 결과는 blue 색으로 <br> 적용이 된다.
+
+<br>
+</br>
+
+## 우선 순위 계산
+---
+<br>
+inline-style : 1000점
+<br>
+id 선택자 "#" : 100점
+<br>
+class ".", 가상 클래스, 속성 선택자 : 10점
+<br>
+타입, 가상요소 선택자 : 1점
+<br>
+전체 선택자 "*" : 0점
+
+<br>
+예시를 들어보자!
+
+```html
+<div>
+  <p id="id" class="class">
+		1. 이 글자는 어떤 색일까요?
+	</p>
+  <p id="id" class="class" style="color:red">
+		2. 이 글자는 어떤 색일까요??
+	</p>
+</div>
+```
+```css
+div #id{
+  color:green;
+}
+p{
+  color:black;
+}
+#id{
+  color:blue;
+}
+.class{
+  color:yellow;
+}
+```
+여기서 1번 문장은 #id, .class와 같이 단독으로 쓰이는 것보다 유형 선택자와 아이디 선택자가 함께 쓰인 <br> div #id처럼 더 구체적으로 작성된 선택자 속성이 <br> 적용되어 "초록색"으로 적용이 된다.
+
+2번 문장은 inline-style 속성이 적용되어 "빨간색"으로 적용이 된다.
+
+<br>
+</br>
+
+## 중요성의 원칙 (!important)
+---
+<br>
+이 선언은 다른 CSS의 어떤 선언 보다도 우선된다.
+
+<br>
+
+**<u>하지만, CSS의 자연스러운 상속을 깨뜨리기 때문에 오류 및 버그 발생 시 수정을 어렵게 만들어서 important의 사용은 좋지 못한 습관이다!</u>**
+
+<br>
+</br>
+
+# 블록 레벨 요소 vs 인라인 레벨 요소
+## block
+---
+<br>
+부모 요소의 전체 공간을 차지하여 블록을 만든다.
+
+<br>
+언제나 새로운 줄에서 시작, 좌 우 양측으로 최대한 <br> 늘어나 가능한 모든 너비를 차지한다.
+
+<br>
+앞 뒤 요소 사이에 새로운 줄을 만들고, 이전 이후 <br> 요소 사이에 줄 바꿈이 일어난다.
+
+<br>
+블록 요소는 인라인 요소안에 중첩 될 수 없지만, <br> 인라인 요소는 블록 요소 안에 중첩 될 수 있다.
+
+**<u>a 태그 안에는 블록 요소 중첩 가능!</u>**
+
+<br>
+width, height 크기를 지정할 수 있으며 <br> padding, border, margin 속성을 사용할 수 있다.
+
+<br>
+div, p, li, nav, footer 등이 있다.
+
+<br>
+</br>
+
+## inline
+---
+<br>
+항상 블록 레벨 요소 내에 포함된다.
+
+<br>
+컨텐츠의 흐름을 끊지 않으며, 컨텐츠에 따라 할당된 공간만 차지한다.
+
+<br>
+문장, 단어 같은 작은 부분에 대해서 적용된다.
+
+<br>
+새로운 줄을 만들지 않는다.
+
+<br>
+width, height 크기를 지정할 수 없으며 <br> padding, border, margin 속성을 사용할 수 있지만, <br> 상하 margin 속성은 사용할 수 없다.
+
+<br>
+span, a, em, strong 등이 있다.
+
+<br>
+</br>
+
+# CSS Box Model
+## 기본 요소
+---
+<br>
+CSS Box Model은 HTML 요소를 감싸는 상자로, <br> 요소, 패딩, 테두리, 마진으로 구성되어 있다.
+
+<br>
+요소 : 텍스트, 사진 등 보여줄 대상이다.
+<br>
+패딩 : 요소 주변 영역을 감싼다.
+<br>
+테두리 : 요소와 패딩을 감싸는 테두리이다.
+<br>
+마진 : 테두리 밖의 영역을 감싼다.
+
+<br>
+</br>
+
+## width
+---
+<br>
+요소의 너비를 설정한다.
+
+<br>
+기본 값은 컨텐츠 영역의 너비이지만, <br> box-sizing 속성을 사용하여 테두리 영역의 너비를 설정한다.
+
+<br>
+auto : 기본값으로 브라우저가 계산하여 지정  <br> (요소의 부모 크기 기준으로 가득 채우기)
+
+<br>
+min-content : 최소 너비
+<br>
+max-content : 컨텐츠 내용의 선호 너비
+
+<br>
+</br>
+
+## height
+---
+<br>
+요소의 높이를 설정한다.
+
+<br>
+auto : 기본값으로 브라우저가 계산하여 지정  <br> (요소의 자식 기준으로 조절)
+
+<br>
+</br>
+
+## padding
+---
+<br>
+단축 속성이다.
+
+<br>
+4가지를 모두 설정할 경우에는 padding-top, padding-right, padding-bottom, padding-left 순으로 작성한다.
+
+```css
+p{
+	padding: 10px; /* top, right, bottom, left 모두 10px */
+	padding: 10px 20px; /* top, bottom :10px,  left, right:20px */
+	padding: 10px 20px 30px; /* top:10px, left,right:20px, bottom:30px */
+	padding: 10px 20px 30px 40px;
+}
+```
+
+<br>
+</br>
+
+## margin
+---
+<br>
+단축 속성이다.
+
+<br>
+4가지를 모두 설정할 경우에는 margin-top, <br> margin-right, margin-bottom, margin-left 순으로 <br> 작성한다.
+
+<br>
+가운데 배치
+
+```css
+p{
+	width: 400px;
+	margin: auto; 
+}
+```
+오른쪽 배치
+
+```css
+p{
+	width: 400px;
+	margin: auto 0 auto auto;
+}
+```
+
+**<u>margin auto는 수평 정렬을 할 수 있지만, <br> 세로 정렬을 적용할 수는 없다!</u>**
+
+<br>
+</br>
+
+## 마진 병합 현상 (Margin Collapsing)
+---
+<br>
+요소와 요소 사이에 마진 탑(margin-top) 혹은 <br> 마진 바텀(margin-bottom)의 공간이 있을 경우 더 높은 값의 마진 값이 적용되는 현상
+
+<br>
+부모 요소와 자식 요소가 존재할 때, <br> 자식 요소의 마진 탑 혹은 마진 바텀 값이 부모의 높이에 영향을 미치지 않는 현상
+
+<br>
+
+**<u>마진 병합 현상 해결방법</u>**
+
+1. 부모 요소에 overflow 속성 값을 적용해준다.
+2. 부모 요소에 display: inline-block 값을 <br> 적용해준다.
+3. 부모 요소에 border 값을 적용해준다.
+
+<br>
+</br>
+
+## border
+---
+<br>
+테두리를 지정한다.
+
+<br>
+테두리는 요소가 차지하는 전체 너비, 높이의 일부이다.
+
+<br>
+선의 두께, 스타일, 색상을 지정할 수 있다.
+
+<br>
+</br>
+
+## box-sizing
+---
+<br>
+content-box : 기본값.width, height에 border과 padding을 포함하지 않는다.
+
+<br>
+border-box : width, height에 border과 padding을 포함한다.
+<br>
+[예를 들어, width = 컨텐츠 너비 + border + padding]
+
+<br>
+</br>
+
+## overflow, overflow-x, overflow-y
+---
+<br>
+박스보다 컨텐츠가 더 커서 컨텐츠가 넘칠 경우, <br> 어떻게 처리할지를 지정한다.
+
+<br>
+visible : 기본값, 박스를 넘는 컨텐츠를 자르지 않는다.
+hidden : 요소의 크기만큼 맞추기 위해 잘라낸다. <br> [스크롤바를 제공하지 않는다.]
+
+scroll : 요소의 크기만큼 잘라낸다. <br> [스크롤을 제공한다.]
+
+<br>
+</br>
+
+## border-radius
+---
+<br>
+상자의 모서리를 둥글게 처리한다.
+
+<br>
+</br>
+
+## background
+---
+<br>
+background-attachment
+
+<br>
+1. fixed : 뷰포트에 고정
+<br>
+2. local : 요소 컨텐츠에 대해 고정, 스크롤이 존재하면 배경은 컨텐츠와 함께 스크롤이 된다.
+<br>
+3. scroll : 배경 요소 자체에 대해 고정, 스크롤이 존재해도 배경은 함께 스크롤 되지 않는다.
+
+<br>
+
+background-color : 배경 색상 설정
+<br> 
+background-image : 배경 이미지 설정
+<br> 
+background-position : 배경 위치 설정
+
+<br>
+background-repeat : 배경 이미지를 어떻게 반복할 것인지 설정한다.
+
+<br>
+1. repeat : 반복
+<br>
+2. no-repeat : 반복하지 않음
+<br>
+3. repeat-x : x축으로만 반복
+<br>
+4. repeat-y : y축으로만 반복
+
+<br>
+background-size
+
+<br>
+contain : 이미지가 잘리거나 찌그러지지 않는 한도 내에서 제일 크게 설정한다. <br> [다만, 여백 발생 가능]
+
+<br>
+cover : 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정한다. <br>
+이미지의 가로세로비가 요소와 다르다면, <br> 이미지를 세로 방향 또는 가로 방향으로 잘라내어 <br> 여백이 생기지 않도록 설정합니다.
+
+```css
+div{
+	...생략
+	background-size: 100%;
+	background-size: 100px 400px;
+}
+```
+<br>
+
+**<u>웹페이지에 이미지를 넣는 방법에는 주로 img 태그나 CSS background 속성을 사용한다. <br> 하지만, 가급적이면 img 태그를 사용하자!</u>**
+
+<br>
+</br>
+
+## box-shadow
+---
+<br>
+그림자 효과를 추가한다.
+
+<br>
+offset-x, offset-y, blur-radius, spread-radius, color <br> 등이 있다.
+
+<br>
+</br>
+
+## opacity
+---
+<br>
+불투명도를 설정한다.
+
+<br>
+0 ~ 1 사이의 숫자를 지정할 수 있다. <br> (0: 투명, -1 : 불투명)
