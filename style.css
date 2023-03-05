@@ -1,4 +1,10 @@
-div {	color: sandybrown;}
-p {	
-	border: 1px solid currentColor;
+p {
+	color: blue;
+	font-size: 30px;
+	text-align: center;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px yellow;
+	text-decoration-color: royalblue;
+  	text-decoration-line: underline;
+  	text-decoration-style: wavy;
 }
