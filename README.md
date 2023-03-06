@@ -1344,3 +1344,175 @@ offset-x, offset-y, blur-radius, spread-radius, color <br> 등이 있다.
 
 <br>
 0 ~ 1 사이의 숫자를 지정할 수 있다. <br> (0: 투명, -1 : 불투명)
+
+<br>
+</br>
+
+## display 속성
+---
+<br>
+block : 요소 전후에 줄 바꿈을 생성한다.
+
+<br>
+inline : 요소 전후에 줄 바꿈을 생성하지 않는 인라인 요소 상자를 생성하며, 정상적인 흐름에서 공간이 <br> 있으면 다음 요소는 같은 줄에 있다.
+
+<br>
+inline-block : inline 줄 바꿈 없이 한 줄에 놓이지만, block처럼 box-model의 width, height, margin, padding 값을 모두 설정할 수 있다.
+
+<br>
+flex : 내부 자식 요소들의 위치를 부모 컨테이너 요소 안에서 x, y축 단방향(1차원적)으로 설정한다.
+
+<br>
+grid : 내부 자식 요소들의 위치를 부모 컨테이너 요소 안에서 x, y축 모두 이용해(2차원적) 설정한다.
+
+<br>
+none : 해당 속성은 접근성 트리에서 해당 요소가 <br> 제거된다. 이렇게 되면 해당 요소 및 해당 하위 요소가 사라지고, 스크린리더에도 읽히지 않는다.
+
+<br>
+</br>
+
+# 이미지 img
+## img
+---
+<br>
+문서에 이미지를 삽입한다.
+
+<br>
+src : 경로
+<br>
+alt : 대체 텍스트, 이미지에 대한 설명
+
+<br>
+
+**<u>주의 사항! 이미지 하단에 빈 공간이 생긴다면?</u>**
+<br>
+해당 현상은 img가 **인라인 요소**라서 발생하는 현상
+
+인라인 요소이기 때문에 img의 세로 정렬이 글자의 baseline을 따르게 된다.
+
+따라서, 해당 현상을 해결하기 위해서는 아래와 같은 초기값을 넣어주면 된다.
+```css
+img{
+	vertical-align:top;
+}
+```
+
+<br>
+</br>
+
+# 이미지 비율 유지하기
+## 방법1) aspect-ratio
+---
+<br>
+기본 가로와 세로 비율을 설정한다.
+
+```css
+img{
+  width:300px;
+  aspect-ratio: 2 / 1;
+  object-fit:cover;
+}
+```
+
+<br>
+</br>
+
+## 방법2) padding %값 이용하기
+---
+<br>
+
+padding의 top과 bottom % 값은 부모의 세로가 아닌, **가로 너비** 기준으로 한다.
+
+```html
+<div class="thumbnail">
+  <img src="https://github.com/stronger-deer/myBlog/blob/main/img/main-visual.jpg?raw=true"
+       alt="한 성인이 스케이트보드를 타고 있다" />
+</div>
+```
+
+```css
+.thumbnail {
+  position: relative;
+  height: 0;
+  padding-top: 50%; 
+  overflow: hidden;
+}
+
+.thumbnail  img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+```
+
+<br>
+</br>
+
+# position
+## static
+---
+<br>
+기본값이며, 의미는 변화 움직임이 없이 고정되고 정적인 상태이다.
+
+<br>
+</br>
+
+## relative
+---
+<br>
+비교 상의, 상대적인의 의미를 가진다.
+
+<br>
+자신이 있어야 하는 위치에 상대적이며, 다른 컨텐츠들의 위치에 영향을 미치지 않는다.
+
+<br>
+</br>
+
+## absolute
+---
+<br>
+
+**조상의 위치**를 기준으로 자리를 잡는다.
+
+<br>
+static을 제외한 position 속성값을 가진 가장 가까운 조상이다.
+
+<br>
+</br>
+
+## fixed
+---
+<br>
+브라우저 화면(뷰포트)을 기준으로 위치를 저장한다.
+
+<br>
+
+**<u>단, 요소의 조상 중 하나가 transform, perspective, filter 속성 중 어느 하나라도 none이 아니라면 뷰포트 대신 그 조상을 컨테이닝 블록으로 삼는다.</u>**
+
+일반적인 문서 흐름에서 자신의 요소를 제거하고 자리를 잡으며, 스크롤을 내리거나 올리거나 해도 <br> 화면의 같은 위치에 고정되어 있다.
+
+header, 하단 top 버튼에 사용한다.
+
+<br>
+</br>
+
+## z-index
+---
+<br>
+
+position이 static 외의 값을 가진 박스에 대해 <br> z축의 위치를 지정한다.
+
+<br>
+값이 클 수록 제일 위로 배치된다.
+
+<br>
+부모가 z-index를 높여 자식 앞으로 나올 수 없다.
+
+<br>
+자식은 z-index를 음수값으로 주어 부모 뒤로 갈 수 있다.
+
+<br>
+유지보수를 위해 100단위로 작업하면 좋다.
