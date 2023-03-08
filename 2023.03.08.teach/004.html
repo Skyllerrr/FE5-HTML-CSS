@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex로 레이아웃 만들기</title>
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 400px;
+        }
+
+        .wrap2 {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            
+        }
+        
+        .wrap2 section {
+            flex-grow: 1;
+        }
+
+        .wrap2 aside {
+            flex-basis: 200px;
+        }
+
+
+
+        header {
+            background: skyblue;
+            height: 50px;
+
+        }
+
+        section {
+            flex-wrap: wrap;
+            display: flex;
+
+            height: 100px;
+            background: slateblue;
+
+
+            /*
+            border-radius: 1px solid slateblue;
+            box-sizing: border-box;
+            */
+        }
+
+        aside {
+            height: 100px;
+
+            background: lime;
+        }
+
+        footer {
+            height: 50px;
+            background: salmon;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>header</header>
+        <div class="wrap2">
+            <section>section > article</section>
+            <aside>aside</aside>
+        </div>
+        <footer>footer</footer>
+
+    </div>
+</body>
+
+</html>

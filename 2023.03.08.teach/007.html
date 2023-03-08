@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 실습2</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: 2fr 1fr 2fr;
+            grid-template-areas: "blue blue yellow" "purple orange yellow" "red green green";
+            gap: 5px;
+        }
+
+        .blue {
+            background-color: blue;
+            grid-area: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+            grid-area: yellow;
+        }
+
+        .purple {
+            background-color: purple;
+            grid-area: purple;
+        }
+
+        .orange {
+            background-color: orange;
+            grid-area: orange;
+        }
+
+        .red {
+            background-color: red;
+            grid-area: red;
+        }
+
+        .green {
+            background-color: green;
+            grid-area: green;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="blue">
+            blue
+        </div>
+        <div class="yellow"> 
+            yellow
+        </div>
+        <div class="purple">
+            purple
+        </div>
+        <div class="orange">
+            orange
+        </div>
+        <div class="red">
+            red
+        </div>
+        <div class="green">
+            green
+        </div>
+    </div>
+
+</body>
+
+</html>
