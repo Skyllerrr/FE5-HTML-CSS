@@ -1750,4 +1750,410 @@ clear
 }
 ```
 
+<br>
+</br>
+
+# flex
+## flex-container에 사용하는 속성
+---
+<br>
+display : flex;
+
+<br>
+자식 요소들이 컨테이너 안 공간을 맞추기 위해서 크기를 키우거나 줄이는 방법을 설정하는 방법이다.
+
+<br>
+부모 요소를 flex-container, 자식 요소를 flex-item 이라고 부른다.
+
+<br>
+1차원적 레이아웃(x축 혹은 y축)을 위해 주로 사용한다.
+
+![image](https://user-images.githubusercontent.com/93968241/223656320-fc5e2916-33b8-4109-8193-6cbe5aeea949.png)
+
+<br>
+</br>
+
+## flex-direction
+---
+<br>
+컨테이너 내 아이템을 배치할 때, 주축 및 방향을 지정한다.
+
+<br>
+row : 기본 값, 왼쪽에서 오른쪽 (주 축이 행 방향)
+<br>
+column : 위에서 아래 방향 (주 축이 열 방향)
+<br>
+row-reverse : 오른쪽에서 왼쪽
+<br>
+column-reverse : 아래에서 위 방향
+
+<br>
+</br>
+
+## justify-content
+---
+<br>
+주 축을 기준으로 배열의 위치를 조절하거나 아이템 간의 설정을 할 수 있다.
+
+<br>
+flex-start, flex-end, center, space-between, <br> space-around, space-evenly
+
+<br>
+
+**flex 실습 1 -> 2023.03.08.teach의 001.html**
+
+**flex 실습 2 -> 2023.03.08.teach의 002.html**
+
+**flex 실습 3-> 2023.03.08.teach의 003.html**
+
+<br>
+</br>
+
+## align-items, align-content
+---
+<br>
+align-items : 교차 축을 기준으로 정렬한다.
+
+<br>
+align-content : 컨테이너의 교차 축의 <br> 아이템들이 여러 줄일때, 사용 가능하다.
+[이 속성은 flex-wrap: wrap인 상태에서 사용해야 한다.]
+
+<br>
+</br>
+
+## gap
+---
+<br>
+아이템 사이의 간격을 설정할 때, 사용할 수 있는 <br> 속성이다.
+
+<br>
+</br>
+
+## flex-basis
+---
+<br>
+flex-item의 초기 크기를 설정한다.
+
+<br>
+width, height와 다른 점은 축의 방향에 따라 달라진다는 것과 내부 컨텐츠에 따라 유연한 크기를 가진다는 <br> 것이다.
+
+<br>
+auto : 기본 값
+
+<br>
+flex-basis 값이 적용되어 있다면, row일 경우 width 값이 무시, column일 경우 height 값이 무시된다.
+
+<br>
+
+**<u>기본적으로 px이나 em 등의 단위 값을 사용하며, 0외에 다른 상숫값을 사용할 수 없다.</u>**
+
+<br>
+</br>
+
+## flex-grow
+---
+<br>
+아이템이 컨테이너 내부에서 할당할 수 있는 공간의 정도를 지정한다.
+
+<br>
+형제 요소인 아이템들이 모두 같은 flex-grow 값을 가지면, 내부에서 동일한 공간을 할당 받는다.
+
+<br>
+값을 0을 줄 경우 늘어나지 않는다.
+
+<br>
+</br>
+
+## flex-shrink
+---
+<br>
+아이템의 크기를 고정하거나 축소할 때 사용한다.
+
+<br>
+값을 0을 줄 경우 줄어들지 않는다.
+
+<br>
+</br>
+
+## flex
+---
+<br>
+단축 속성이다.
+
+<br>
+flex-grow, flex-shrink, flex-basis 순이다.
+
+```css
+flex: 1 1 100px;
+```
+
+<br>
+</br>
+
+# grid
+## grid란?
+---
+<br>
+display: grid;
+
+<br>
+자식 요소들이 컨테이너 안에 공간을 맞추기 위해서 <br> 크기를 키우거나 줄이는 방법을 설정한다.
+
+<br>
+부모 요소를 grid-container, 자식 요소를 grid-item 이라고 부른다.
+
+<br>
+그리드 레이아웃은 웹페이지를 위한 2차원 레이아웃 <br> (x축, y축) 시스템이다.
+
+![image](https://user-images.githubusercontent.com/93968241/223665269-a6f17438-3530-4e5f-8745-c1abea371c26.png)
+
+<br>
+</br>
+
+# grid-container에 사용하는 속성
+## grid-template-columns
+---
+<br>
+열 방향 그리드 트랙의 사이즈를 설정한다.
+
+<br>
+</br>
+
+## grid-template-rows
+---
+<br>
+행 방향 그리드 트랙의 사이즈를 설정한다.
+
+```html
+<div class="container"></div>
+```
+
+```css
+.container{
+	display:grid;
+	width:300px;
+	height:300px;
+	grid-template-columns: 100px 100px 100px;
+	grid-template-rows: 200px 100px;
+}
+```
+
+```css
+.container{
+	display:grid;
+	width:300px;
+	height:300px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 2fr 1fr;
+}
+```
+
+![image](https://user-images.githubusercontent.com/93968241/223732680-06901722-1db6-4484-bea9-2fd9f97e2863.png)
+
+
+**빈 화면에 그리드 라인이 생기는 것을 볼 수 있다.**
+
+<br>
+
+**<u>새로운 단위 fr</u>**
+- fraction: 분수
+- 컨테이너를 분할해준다. 
+- grid 컨테이너 안에서 트랙의 비율을 지정해주는 유연한 길이 단위이다.
+- 1fr 1fr 1fr은  1:1:1 의 비율을 의미한다.**
+
+**flex 실습 1 -> 2023.03.08.teach의 005.html**
+
+<br>
+</br>
+
+## repeat()
+---
+<br>
+row 혹은 column 방향으로 grid-track의 사이즈를 좀 더 간단한 형태로 표현하도록 도와주는 CSS함수이다.
+
+<br>
+
+함수에 전달하는 첫 번째 인자는 <br> **반복 횟수(repeat count)**, 두 번째 인자는 **반복할 값**이다.
+
+```css
+.container {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr;
+  }
+```
+
+```css
+/* grid-template-columns: 1fr 2fr 1fr 2fr; */
+grid-template-columns: repeat(2, 1fr 2fr);
+```
+
+<br>
+</br>
+
+## minmax()
+---
+<br>
+그리드에서 최소와 최대 사이의 범위를 설정하는 함수이며, 최소와 최대값을 의미하는 두 가지 인자를 가진다.
+
+<br>
+min 보다 크거나 같고, max 보다 작거나 같은 크기 <br> 범위를 정의한다.
+
+<br>
+</br>
+
+## auto-fill & auto-fit
+---
+<br>
+만약 repeat 함수를 사용할 때, 반복되는 카운트를 <br> 고정하지 않고 컨테이너의 넓이에 따라 가능한 많은 <br> 그리드 컬럼을 배치하고 싶다면 사용하는 키워드 값이다.
+
+<br>
+auto-fill : 가능한 많은 셀들을 만들어 낼려고 하며, <br> 빈 공간이 생긴다.
+
+<br>
+auto-fit : 그리드 컨테이너 내부에 공간이 남을 경우, <br> 그 공간을 각 셀들이 나눠 갖는다.
+
+<br>
+</br>
+
+## gap
+---
+<br>
+셀과 셀사이의 간격을 설정할 때 사용 할 수 있는 <br> 속성이고, 복잡한 레이아웃 안에서 마진 대신 편리하게 간격을 설정할 수 있으며, grid-gap은 gap으로 <br> 사용할 수 있습니다.
+
+```css
+gap : 10px 20px;
+```
+
+<br>
+</br>
+
+## align-items
+---
+<br>
+직계 자식에 대한 수직(열) 정렬을 모두 동일하게 준다.
+
+<br>
+stretch, center, start, end
+
+<br>
+</br>
+
+## justify-items
+---
+<br>
+직계 자식에 대한 수평(열) 정렬을 모두 동일하게 준다.
+
+<br>
+stretch, center, start, end
+
+<br>
+</br>
+
+# grid-itemr에 사용하는 속성
+## grid-area
+(grid-column-start, <br> grid-column-end, grid-row-start, grid-row-end)
+---
+<br>
+
+```css
+grid-row-start: 1; /* 1 */
+grid-row-end: 2; /* 3 */
+grid-column-start: 1; /* 2 */
+grid-column-end: 4; /* 4 */
+
+
+grid-row: 1/2;
+grid-column: 1/4;
+
+
+grid-area: 1/1/2/4;
+
+grid-area: 1/1/1/span 3; 
+```
+
+<br>
+
+**grid-template-areas / grid-area**
+
+
+```css
+.container{
+	grid-template-areas: 
+		"header header header"
+		"section section aside"
+		"footer footer footer"
+}
+
+header{
+	grid-area:header;
+}
+```
+
+<br>
+</br>
+
+## z-index
+---
+<br>
+z-index 속성을 grid 안에서도 사용할 수 있으며, <br> grid 안에서는 굳이 position 속성을 사용하지 않더라도 화면에 보여지는 우선순위를 설정할 수 있다.
+
+<br>
+</br>
+
+## align-self
+---
+<br>
+아이템 개별로 수직(열) 정렬을 지정한다.
+
+<br>
+stretch, center, start, end
+
+<br>
+</br>
+
+## justify-self
+---
+<br>
+아이템 개별로 수평(핼) 정렬을 지정한다.
+
+<br>
+stretch, center, start, end
+
+<br>
+</br>
+
+## place-self
+---
+<br>
+align-self, justify-self 를 함께 적는 단축 속성이다.
+
+```css
+/* 수직: 중앙, 수평 : 끝(오른쪽) */
+place-self: center end;
+```
+
+<br>
+</br>
+
+## grid
+---
+<br>
+단축 속성이다.
+
+<br>
+grid-template-rows, grid-template-columns, <br> grid-template-areas, grid-auto-rows, <br> grid-auto-columns, grid-auto-flow
+
+<br>
+
+```css
+grid: auto-flow / 1fr 1fr 1fr;
+
+grid: auto-flow dense / 40px 40px 1fr;
+```
+
+**grid 실습 2 -> 2023.03.08.teach의 007.html**
 
