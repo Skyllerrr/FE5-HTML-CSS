@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc 함수 실습</title>
+    <style>
+        .wrap {
+            background-color: royalblue;
+            height: 100px;
+            width: 1400px;
+            margin: auto;
+            max-width: calc(100% - 80px);
+        }
+
+        .container-grid {
+            overflow: hidden;
+        }
+
+        .container-grid ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-grid ul li {
+            float: left;
+            background: gold;
+            width: calc((100% - (24px * 2)) / 3);
+        }
+
+        .container-grid li:not(:first-child) {
+            margin-left: 24px;
+        }
+
+        .container-flex {
+            display: flex;
+            gap: 24px;
+        }
+
+        .container-flex li {
+            background: gold;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        contents
+    </div>
+    <ul class="container-grid">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul class="container-flex">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+</body>
+
+</html>
