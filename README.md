@@ -2157,3 +2157,151 @@ grid: auto-flow dense / 40px 40px 1fr;
 
 **grid 실습 2 -> 2023.03.08.teach의 007.html**
 
+<br>
+</br>
+
+# CSS 변수, 함수
+## :root
+---
+<br>
+전역 CSS 변수 선언하기
+
+<br>
+
+```css
+:root{
+	--main-color:royalblue;
+	--pane-padding: 5px 40px;
+}
+```
+해당 하이픈 2개 (--) 다음 속성이름을 적고, 속성값을 정해준다.
+
+<br>
+</br>
+
+## var()
+---
+<br>
+CSS 변수값으로 지정할 수 있다.
+
+<br>
+첫 번째 인수 : 가져올 사용자 지정 속성 이름
+<br>
+두 번째 인수 : 대체값
+
+<br>
+
+```css
+strong{
+	color:var(--main-color, blue);
+}
+```
+
+<br>
+</br>
+
+## calc()
+---
+<br>
+CSS 속성 값으로 계산식을 지정할 수 있다.
+
+<br>
++, -, *, /와 같은 사칙연산이 가능하다.
+
+<br>
+해당 함수를 이용하여 서로 다른 단위끼리 계산할 수 있다.
+
+<br>
+
+```css
+width:calc(100% - 80px);
+```
+<br>
+
+**<u>좌우 공백을 꼭! 요구한다!</u>**
+
+**calc(50% -80px) 유효하지 않으며, calc(50% -80px)와 같이 사용해야 한다.**
+
+<br>
+
+**calc 실습 및 설명 -> 2023.03.09.teach의 001.html**
+
+
+요소를 화면에 여백과 함께 배치하기
+
+<br>
+<li>기본 너비 1400px
+<li>수평 가운데 위치
+<li>뷰포트가 1400px 이하로 줄어들 경우, 좌우 30px의 여백이 생기도록
+
+<br>
+
+```css
+.wrap{
+	width:1400px;
+	margin: auto;
+	max-width:calc(100% - 60px);
+}
+```
+
+<li>레이아웃 단 구성하기
+
+<br>
+
+```css
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+```
+```css
+li {
+    float:left;
+	width:calc((100% - (24px * 2)) / 3);
+}
+
+li:not(:first-child) {
+	margin-left:24px;
+}
+```
+
+<br>
+</br>
+
+## min(), max()
+---
+<br>
+쉼표로 구분된 () 내 목록에서 가장 작은(min) 또는 가장 큰(max) 값을 설정한다.
+
+<br>
+
+```css
+.wrap{
+	width:1400px;
+	margin: auto;
+	max-width:calc(100% - 60px);
+}
+```
+
+```css
+.wrap{
+	width: min(1400px, calc(100% - 60px));
+	margin: auto;
+}
+```
+
+<br>
+</br>
+
+## clamp()
+---
+<br>
+설정된 이상적인 값을 기준으로 상한과 하한 사이의 값을 고정한다.
+
+<br>
+최소값, 이상적인 값, 최대값 등 3가지 값을 입력한다.
+
+<br>
+반응형 폰트를 설정할 때, 사용할 수 있다.
+
