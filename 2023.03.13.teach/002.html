@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .wrap {
+            padding: 50px;
+            display: flex;
+            gap: 150px;
+        }
+
+        .wrap div .default {
+            position: absolute;
+        }
+
+        p {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .default {
+            background: #eee;
+            border: 1px dashed #666;
+        }
+
+        [class^="transform"] {
+            background: rgba(141, 75, 246, 0.8);
+            border: 1px solid rgba(141, 75, 246, 1);
+        }
+
+        .transform-scale {
+            transform: scale(1.5);
+        }
+
+        .transform-rotate {
+            transform: rotate(45deg);
+        }
+
+        .transform-translate {
+            transform: translate(30px, 30px);
+        }
+
+        .transform-skew {
+            transform: skew(20deg);
+        }
+
+        .origin [class^="transform"] {
+            transform-origin: 0 0;
+        }
+
+        .origin2 [class^="transform"] {
+            transform-origin: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <p class="default"></p>
+            <p class="transform-scale">scale</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-rotate">rotate</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-translate">translate</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-skew">translate</p>
+        </div>
+    </div>
+
+
+
+    <div class="wrap origin">
+        <div>
+            <p class="default"></p>
+            <p class="transform-scale">scale</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-rotate">rotate</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-translate">translate</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-skew">translate</p>
+        </div>
+    </div>
+
+    <div class="wrap origin2">
+        <div>
+            <p class="default"></p>
+            <p class="transform-scale">scale</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-rotate">rotate</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-translate">translate</p>
+        </div>
+
+        <div>
+            <p class="default"></p>
+            <p class="transform-skew">translate</p>
+        </div>
+    </div>
+</body>
+
+</html>

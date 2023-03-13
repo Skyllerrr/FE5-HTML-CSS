@@ -1,0 +1,98 @@
+.wrap {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.hair {
+    width: 250px;
+    height: 40px;
+    background-color: black;
+}
+
+.face {
+    margin-top: 15%;
+    position: relative;
+    background: burlywood;
+    width: 250px;
+    height: 200px;
+    border-radius: 200px 200px;
+    
+}
+
+.left-eye {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    margin: 50px;
+}
+
+.right-eye {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    margin: 50px;
+    margin-left: 160px;
+}
+
+.nose {
+    
+    
+    width: 30px;
+    height: 60px;
+    background-color: black;
+    position: relative;
+    margin: 40%;
+    margin-left: 110px;
+    border-radius: 15px 15px 7px 7px;
+}
+
+
+
+.nose-left {
+    
+    border-radius: 15px 15px 15px 15px;
+    
+    position: absolute;
+    margin-left: 110px;
+    margin-top: -115px;
+    width: 15px;
+    height: 15px;
+    background-color: bisque;
+}
+
+.nose-right {
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 125px;
+    margin-top: -115px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: bisque;
+}
+
+.mouse-top {
+    
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100px;
+    height: 15px;
+    background-color: brown;
+    margin: auto;
+    margin-top: -90px;
+}
+
+.mouse-bottom {
+    
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100px;
+    height: 15px;
+    background-color: brown;
+    margin: auto;
+}
