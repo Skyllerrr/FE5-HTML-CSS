@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 100%;
+            
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        .blue {
+            background-color: skyblue;
+        }
+
+        .gold {
+            background-color: gold;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <caption>테이블 설명</caption>
+        <colgroup>
+            <col span="2" class="blue">
+            <col class="gold">
+            <col class="pink">
+        <thead>
+            <tr>
+                <th scope="row">제목</th>
+                <th rowspan="2">셀 제목</th>
+                <th>셀 제목</th>
+                <th>셀 제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>셀 내용</td>
+                <td>셀 내용</td>
+                <td>셀 내용</td>
+                <td>셀 내용</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    </colgroup>
+</body>
+
+</html>

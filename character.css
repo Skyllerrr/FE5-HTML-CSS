@@ -1,4 +1,11 @@
+body {
+    
+    background: skyblue;
+    
+}
+
 .wrap {
+    
     display: flex;
     text-align: center;
     justify-content: center;
@@ -6,13 +13,14 @@
 }
 
 .hair {
-    width: 250px;
-    height: 40px;
     background-color: black;
 }
 
 .face {
-    margin-top: 15%;
+    border: 5px solid #0d0b06;
+    
+    margin-top: 150px;
+    margin-right: 350px;
     position: relative;
     background: burlywood;
     width: 250px;
@@ -20,6 +28,9 @@
     border-radius: 200px 200px;
     
 }
+
+
+
 
 .left-eye {
     width: 40px;
